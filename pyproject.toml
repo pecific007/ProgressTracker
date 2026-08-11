@@ -1,13 +1,16 @@
 [project]
 name = "progress-tracker"
 version = "0.1.0"
-description = "Add your description here"
+description = "A simple progress tracker"
 readme = "README.md"
 authors = [
     { name = "pecific007", email = "pecific2007@gmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "flask>=3.1.3",
+    "plibsqlite",
+]
 
 [project.scripts]
 progress-tracker = "progress_tracker:main"
@@ -15,3 +18,10 @@ progress-tracker = "progress_tracker:main"
 [build-system]
 requires = ["uv_build>=0.12.3,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+plibsqlite = { git = "https://github.com/pecific007/plibsqlite.git" }
+
