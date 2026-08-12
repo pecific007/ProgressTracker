@@ -1,0 +1,111 @@
+
+.entries {
+    display: flex;
+    flex: 1 1 20;
+    gap: var(--gap-general-grid);
+    flex-wrap: wrap;
+    max-width: fit-content;
+    padding: var(--padding-large);
+}
+
+.entry-wrapper {
+    box-sizing: content-box;
+    display: grid;
+    gap: var(--gap-general-grid);
+    background-color: #FFFFFF;
+    padding: calc(2 * var(--padding-large));
+    border-radius: var(--border-radius-large);
+    border: var(--border-width-medium) solid var(--color-dark-border);
+    max-width: 25em;
+    max-height: 20vh;
+    overflow: auto;
+}
+
+.entry-header {
+    border-bottom: var(--border-width-large) dotted var(--color-dark-border);
+}
+.entry-title {
+    font-size: var(--font-size-large);
+}
+.entry-info {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: inherit;
+    max-height: fit-content;
+    gap: var(--gap-general-grid);
+    * {
+        max-height: max-content;
+    }
+}
+
+.entry-status {
+    text-wrap: nowrap;
+    padding-block: calc(var(--padding-small) / 2.0);
+    padding-inline: var(--padding-large);
+    border-radius: var(--border-radius-large);
+    &[data-status="solved"] {
+        background-color: var(--color-solved-easy);
+    }
+    &[data-status="pending"] {
+        background-color: var(--color-pending-medium);
+    }
+    &[data-status="unsolvable"] {
+        background-color: var(--color-unsolved-hard);
+    }
+}
+
+.entry-tag {
+    text-wrap: nowrap;
+    padding-block: calc(var(--padding-small) / 2.0);
+    padding-inline: var(--padding-large);
+    border-radius: var(--border-radius-large);
+    background-color: var(--color-tag-bg);
+    border: var(--border-width-small) solid var(--color-tag-border);
+}
+
+
+.entry-difficulty {
+    text-wrap: nowrap;
+    padding-block: calc(var(--padding-small) / 2.0);
+    padding-inline: var(--padding-large);
+    border-radius: var(--border-radius-large);
+    &[data-difficulty="easy"] {
+        background-color: var(--color-solved-easy);
+    }
+    &[data-difficulty="medium"] {
+        background-color: var(--color-pending-medium);
+    }
+    &[data-difficulty="hard"] {
+        background-color: var(--color-unsolved-hard);
+    }
+    &[data-difficulty="unknown"] {
+        background-color: var(--color-unknown-difficulty);
+        color: #FFFFFF;
+    }
+}
+
+.entry-revisit {
+    text-wrap: nowrap;
+    padding-block: calc(var(--padding-small) / 2.0);
+    padding-inline: var(--padding-large);
+    border-radius: var(--border-radius-large);
+    background-color: var(--color-orange);
+    color: var(--color-lighter-orange);
+}
+
+.entry-data {
+    display: flex;
+    flex: 1 1 15;
+    flex-direction: column;
+    gap: var(--gap-general-grid);
+}
+
+.entry-link {
+    width: 100%;
+}
+
+.entry-note {
+    width: 100%;
+    font-family: monospace;
+    white-space: pre-wrap;
+}

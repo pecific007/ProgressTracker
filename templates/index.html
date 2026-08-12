@@ -1,7 +1,15 @@
 {% extends 'layout.html' %}
 
-{% block title %}Dashboard{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="/static/css/index.css">
+{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block body %}
-<h1>Index.html</h1>
+<main class="content">
+    <div class="entries">
+    </div>
+</main>
+
+<script src="/static/js/index.js"></script>
 {% endblock %}
