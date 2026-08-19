@@ -51,16 +51,20 @@ html, body, * {
     padding: 0;
     box-sizing: border-box;
     font-size: var(--font-size-medium);
+    font-family: Roboto;
 }
 
-body {
+html, body {
     background-color: var(--color-lighter-orange);
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
 }
 
 header {
     width: 100dvw;
     position: sticky;
-    top: 0;
+    top: calc(0 - var(--min-height-nav));
     left: 0;
     z-index: 9999;
     background-color: var(--color-light-orange);
@@ -72,7 +76,7 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    margin-bottom: var(--padding-large);
+    box-shadow: 0 2px 15px color-mix(in srgb, var(--color-orange) 40%, transparent);
 }
 
 .navigation-bar {
@@ -108,6 +112,9 @@ header {
     border: none;
     padding: var(--padding-medium);
     border-radius: var(--border-radius-extra-small);
+    &:hover {
+        background-color: #C43D30;
+    }
 }
 
 .input {
@@ -126,7 +133,7 @@ header {
     }
 
     &:is(textarea) {
-        height: 2lh;
+        height: 5lh;
         resize: vertical;
         min-height: 2lh;
         font-size: var(--font-size-medium-large);
@@ -141,7 +148,20 @@ header {
 }
 
 .content {
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
+    height: calc(100dvh - var(--min-height-nav));
+    overflow: auto;
+}
+
+.error {
+    width: fit-content;
+    text-align: center;
+    display: grid;
+    gap: var(--gap-general-grid);
+    h1 {
+        font-size: 2em;
+        color: red;
+    }
 }

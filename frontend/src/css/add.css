@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     gap: var(--gap-general-grid);
+    padding: var(--padding-large);
 }
 
 label {
@@ -31,16 +32,16 @@ fieldset {
     }
 
     .radio-input-container {
-        background-color: var(--color-orange);
-        color: #FFFFFF;
+        color: var(--color-orange);
+        background-color: #FFFFFF;
+        border: var(--border-width-small) solid var(--color-orange);
         padding: var(--padding-large);
-        border: var(--border-width-small) solid transparent;
         border-radius: var(--border-radius-medium);
         transition: all 200ms ease-in-out;
     }
     .radio-input-container:has(input[type="radio"]:checked) {
-        color: var(--color-orange);
-        background-color: #FFFFFF;
-        border: var(--border-width-small) solid var(--color-orange);
+        color: #FFFFFF;
+        background-color: var(--color-orange);
+        border: var(--border-width-small) solid transparent;
     }
 }

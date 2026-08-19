@@ -1,0 +1,4 @@
+progress-tracker
+*.db
+*.sqlite
+*.sqlite3
