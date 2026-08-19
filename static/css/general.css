@@ -85,10 +85,6 @@ header {
     font-size: var(--font-size-extra-large);
     text-decoration: none;
     color: var(--color-orange);
-
-    img {
-        max-height: var(--min-height-nav);
-    }
 }
 
 .nav-link {
