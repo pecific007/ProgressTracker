@@ -45,6 +45,7 @@
     font-size: var(--font-size-large);
     max-width: var(--entry-card-max-width);
     text-wrap: wrap;
+    overflow-wrap: break-word;
     overflow: auto;
     /*&::before {
         content: '\f02d';

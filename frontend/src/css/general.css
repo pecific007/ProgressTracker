@@ -153,6 +153,11 @@ header {
     justify-content: center;
     height: calc(100dvh - var(--min-height-nav));
     overflow: auto;
+
+    &:has(.error) {
+        height: fit-content;
+        padding: var(--padding-large);
+    }
 }
 
 .error {
@@ -163,5 +168,26 @@ header {
     h1 {
         font-size: 2em;
         color: red;
+    }
+}
+
+@keyframes loading-animation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-component {
+    &::before {
+        content: '\f110';
+        font: var(--fa-font-solid);
+        margin-right: .5em;
+        animation: loading-animation 1s linear infinite;
+        display: inline-block;
+        font-size: 2em;
     }
 }

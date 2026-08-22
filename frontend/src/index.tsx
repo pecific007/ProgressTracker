@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import ErrorComponent from './error'
+import { LoadingComponent } from './App'
 import type { Entry } from './types'
 import './css/index.css'
 
-export function formatDate(timestamp: string): string {
+function formatDate(timestamp: string): string {
   const datime = new Date(timestamp)
   const year = datime.getFullYear();
   const month = String(datime.getMonth() + 1).padStart(2, "0");
@@ -31,23 +32,25 @@ function EntryCard() {
         const data: Entry[] = await resp.json()
         setEntries(data)
       } catch (err) {
-        setError("Unable to connect to server")
+        setError(`Unable to connect to server: ${err}`)
       } finally {
         setLoading(false)
       }
     })();
   }, [])
 
-  if (error) {
+  if (!entries && error) {
     return (
       <ErrorComponent error={error} />
     )
   }
-  if (!entries && loading) {
+
+  if (loading) {
     return (
-      <p>Loading...</p>
+      <LoadingComponent />
     )
   }
+
   if (entries.length == 0) {
     return (
       <p>No entries yet.<a href="#/add">Add an entry.</a></p>
@@ -113,14 +116,14 @@ function EntryCard() {
   )
 }
 
-function SearchAndFilter() {
-  return (
-    <div className="search-filter-bar">
-      <input type="text" placeholder="search..." />
-      <button>Search</button>
-    </div>
-  )
-}
+// function SearchAndFilter() {
+//   return (
+//     <div className="search-filter-bar">
+//       <input type="text" placeholder="search..." />
+//       <button>Search</button>
+//     </div>
+//   )
+// }
 
 export function IndexPage() {
   return (

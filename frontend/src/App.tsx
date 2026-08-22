@@ -21,6 +21,12 @@ function Header({ route }: { route: string }) {
   )
 }
 
+export function LoadingComponent() {
+  return (
+    <p className="loading-component">Loading...</p>
+  )
+}
+
 function App() {
   const { segments, params } = getRoute()
   const [route] = segments

@@ -20,3 +20,15 @@ export interface FormData {
   solved_time: string;
   note:        string;
 }
+
+export type Tags = {
+  status: string[];
+  subject: string[];
+  difficulty: string[];
+}
+
+export interface FormProps {
+  data?: Entry;
+  method?: string;
+  button: string;
+}
